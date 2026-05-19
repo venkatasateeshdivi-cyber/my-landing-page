@@ -1,27 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #102a43, #1769aa); color: white; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; }
-    .card { background: white; color: #172033; max-width: 560px; padding: 38px 26px; border-radius: 22px; box-shadow: 0 18px 45px rgba(0,0,0,.25); }
-    .check { width: 76px; height: 76px; background: #ffb703; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 42px; margin-bottom: 20px; }
-    h1 { font-size: 34px; margin-bottom: 12px; color: #102a43; }
-    p { color: #52606d; font-size: 17px; margin-bottom: 22px; }
-    a { display: inline-block; background: #ffb703; color: #172033; padding: 13px 18px; border-radius: 10px; text-decoration: none; font-weight: bold; }
-    .small { margin-top: 18px; font-size: 14px; color: #7b8794; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You | Bangalore Packers Pro</title>
+<meta name="robots" content="noindex" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1a1411;
+  --paper:#f7f2ea;
+  --maroon:#7B1F2B;
+  --maroon-dark:#5e1620;
+  --gold:#C9A227;
+  --gold-soft:#e3c969;
+  --line:#ddd0bd;
+  --muted:#6c6354;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Outfit',sans-serif;color:var(--ink);
+  background:
+    radial-gradient(800px 480px at 80% -10%,rgba(201,162,39,.22),transparent),
+    var(--paper);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:32px 20px;-webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background-image:radial-gradient(var(--line) 1px,transparent 1px);
+  background-size:26px 26px;opacity:.45;
+  mask-image:linear-gradient(180deg,#000,transparent 75%);
+}
+h1,h2{font-family:'Fraunces',serif;}
+a{text-decoration:none;}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  max-width:560px;width:100%;padding:48px 40px;text-align:center;
+  box-shadow:0 24px 60px -28px rgba(123,31,43,.5);
+}
+.tick{
+  width:84px;height:84px;border-radius:50%;background:var(--maroon);
+  margin:0 auto 22px;display:flex;align-items:center;justify-content:center;
+  border:3px solid var(--gold);
+  animation:pop .5s cubic-bezier(.18,.89,.32,1.28);
+}
+.tick svg{width:40px;height:40px;}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+.brand{
+  font-family:'Fraunces',serif;font-weight:900;font-size:19px;
+  letter-spacing:-.02em;margin-bottom:6px;
+}
+.brand span{color:var(--maroon);}
+.eyebrow{
+  font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin-bottom:14px;
+}
+.card h1{font-size:34px;letter-spacing:-.01em;margin-bottom:14px;}
+.card p.msg{font-size:16px;color:var(--muted);line-height:1.6;margin-bottom:26px;}
+
+.next{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;text-align:left;margin-bottom:26px;
+}
+.next h2{font-size:16px;margin-bottom:12px;}
+.next ul{list-style:none;}
+.next li{
+  font-size:14.5px;color:var(--ink);padding:7px 0 7px 28px;position:relative;line-height:1.5;
+}
+.next li::before{
+  content:"✓";position:absolute;left:0;top:7px;color:var(--maroon);font-weight:700;
+}
+
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.b-call{
+  background:var(--maroon);color:#fff;padding:14px 30px;border-radius:999px;
+  font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;
+  transition:background .2s,transform .15s;
+}
+.b-call:hover{background:var(--maroon-dark);transform:translateY(-2px);}
+.b-home{
+  display:inline-block;margin-top:22px;font-size:14px;font-weight:500;
+  color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px;
+}
+.b-home:hover{color:var(--maroon);}
+
+@media(max-width:520px){
+  .card{padding:38px 24px;}
+  .card h1{font-size:27px;}
+}
+</style>
 </head>
 <body>
   <div class="card">
-    <div class="check">✓</div>
-    <h1>Thank You!</h1>
-    <p>Your moving quote request has been submitted successfully. Our team will contact you shortly.</p>
-    <a href="index.html">Back to Home</a>
-    <div class="small">For urgent moving support, call: +91 99999 99999</div>
+    <div class="brand">Bangalore <span>Packers Pro</span></div>
+    <div class="tick">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+    <p class="eyebrow">Request Received</p>
+    <h1>Thank you! We've got your details.</h1>
+    <p class="msg">Your moving enquiry has reached our team. A relocation expert will call you back within <strong>30 minutes</strong> during working hours to discuss your move and share a free quote.</p>
+
+    <div class="next">
+      <h2>What happens next</h2>
+      <ul>
+        <li>Our team reviews your moving requirement.</li>
+        <li>We call you to confirm details and schedule a free survey.</li>
+        <li>You receive a fixed written quote — no hidden charges.</li>
+      </ul>
+    </div>
+
+    <div class="cta-row">
+      <a href="tel:+919999999999" class="b-call">📞 Call Us Now</a>
+    </div>
+
+    <a href="index.html" class="b-home">← Back to homepage</a>
   </div>
 </body>
 </html>
