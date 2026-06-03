@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniStars | Childcare Staffing Across Sydney</title>
+  <meta name="description" content="MiniStars connects childcare centres across Sydney with qualified casual educators for last-minute, planned and long-term staffing support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#083b7a;
+      --blue:#0f7bff;
+      --red:#ef2b2d;
+      --yellow:#ffc83d;
+      --green:#1dbf73;
+      --cream:#fff8e8;
+      --sky:#eaf7ff;
+      --text:#17233b;
+      --muted:#64748b;
+      --white:#ffffff;
+      --line:#dce9f7;
+      --shadow:0 22px 60px rgba(8,59,122,.16);
+      --radius:28px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .topbar{background:var(--navy);color:white;font-size:14px}
+    .topbar .container{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:10px 0;flex-wrap:wrap}
+    header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);z-index:50;border-bottom:1px solid var(--line)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:17px 0;gap:22px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:28px;color:var(--navy);letter-spacing:-.04em}
+    .logo span:last-child b{color:var(--red)}
+    .logo-mark{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,var(--yellow),var(--red));display:grid;place-items:center;color:white;font-size:30px;box-shadow:0 14px 28px rgba(239,43,45,.25)}
+    .nav-links{display:flex;gap:25px;font-weight:800;font-size:14px;color:#334155}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:900;border:1px solid transparent;transition:.25s}
+    .btn-primary{background:linear-gradient(135deg,var(--red),#ff7050);color:white;box-shadow:0 14px 32px rgba(239,43,45,.25)}
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
+    .btn-secondary{background:white;border-color:var(--line);color:var(--navy)}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(100deg,#fffaf0 0%,#f0f9ff 48%,#dff4ff 100%);padding:74px 0 0}
+    .hero:after{content:"";position:absolute;right:-180px;top:-180px;width:540px;height:540px;background:radial-gradient(circle,rgba(255,200,61,.55),transparent 70%);border-radius:50%}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
+    .eyebrow{display:inline-flex;background:white;border:1px solid var(--line);color:var(--navy);font-weight:900;padding:9px 14px;border-radius:999px;margin-bottom:18px;box-shadow:0 10px 25px rgba(8,59,122,.08)}
+    h1{font-size:clamp(42px,6vw,74px);line-height:1;letter-spacing:-.07em;color:var(--navy);margin-bottom:20px}
+    h1 strong{color:var(--red)}
+    .hero p{font-size:19px;color:var(--muted);max-width:640px;margin-bottom:27px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .hero-points{display:grid;gap:11px;margin-bottom:32px}
+    .hero-points div{display:flex;gap:10px;font-weight:800;color:#334155}
+    .tick{width:24px;height:24px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-size:14px;flex:none}
+    .hero-visual{height:540px;border-radius:42px 42px 0 0;position:relative;overflow:hidden;background:
+      linear-gradient(rgba(8,59,122,.04),rgba(8,59,122,.04)),
+      url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1200&q=80') center/cover;
+      box-shadow:var(--shadow);
+      border:8px solid white;border-bottom:none}
+    .hero-card{position:absolute;left:24px;bottom:24px;background:white;border-radius:26px;padding:18px;width:310px;box-shadow:0 18px 45px rgba(8,59,122,.18)}
+    .hero-card strong{display:block;color:var(--navy);font-size:20px;margin-bottom:6px}
+    .flag-ribbon{position:absolute;right:-70px;bottom:35px;transform:rotate(-32deg);background:var(--navy);color:white;padding:18px 90px;font-weight:900;box-shadow:0 15px 35px rgba(8,59,122,.25)}
+    .feature-strip{background:white;padding:28px 0;border-bottom:1px solid var(--line)}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .feature{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:22px;background:#fff;border:1px solid var(--line)}
+    .feature-icon{width:48px;height:48px;border-radius:16px;background:var(--sky);display:grid;place-items:center;font-size:24px}
+    .feature h3{color:var(--navy);font-size:17px;margin-bottom:4px}
+    .feature p{color:var(--muted);font-size:14px}
+    section{padding:72px 0}
+    .section-head{text-align:center;max-width:790px;margin:0 auto 38px}
+    .section-head h2{font-size:clamp(32px,4.5vw,54px);line-height:1.05;letter-spacing:-.055em;color:var(--navy);margin-bottom:12px}
+    .section-head p{font-size:18px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:white;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 16px 42px rgba(8,59,122,.08);transition:.25s}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .card-img{height:210px;background-size:cover;background-position:center}
+    .card-body{padding:26px}
+    .card h3{font-size:23px;color:var(--navy);margin-bottom:10px}
+    .card p{color:var(--muted);margin-bottom:18px}
+    .link{color:var(--red);font-weight:900}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .image-panel{min-height:460px;border-radius:38px;background:url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=80') center/cover;box-shadow:var(--shadow)}
+    .content-panel{background:linear-gradient(135deg,#fff,#f0f8ff);border:1px solid var(--line);border-radius:38px;padding:42px}
+    .content-panel h2{font-size:44px;line-height:1.05;letter-spacing:-.05em;color:var(--navy);margin-bottom:18px}
+    .content-panel p{color:var(--muted);font-size:17px;margin-bottom:20px}
+    .list{display:grid;gap:12px;margin:20px 0}
+    .list li{list-style:none;display:flex;gap:11px;font-weight:800}
+    .list li:before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--red);color:white;display:grid;place-items:center;flex:none;font-size:14px}
+    .process{background:linear-gradient(180deg,#f4fbff,#fff8e8)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .step{background:white;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 14px 38px rgba(8,59,122,.08)}
+    .num{width:46px;height:46px;border-radius:16px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:900;margin-bottom:18px}
+    .step h3{font-size:22px;color:var(--navy);margin-bottom:8px}
+    .step p{color:var(--muted)}
+    .cta{background:
+      linear-gradient(90deg,rgba(8,59,122,.93),rgba(15,123,255,.88)),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') center/cover;
+      border-radius:44px;padding:58px;text-align:center;color:white;box-shadow:var(--shadow)}
+    .cta h2{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.06em;margin-bottom:14px}
+    .cta p{max-width:720px;margin:0 auto 26px;color:#e6f4ff;font-size:18px}
+    footer{background:var(--navy);color:white;padding:44px 0;margin-top:74px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px}
+    .footer-grid p,.footer-grid a{color:#c7d8ef;font-size:15px}
+    .footer-grid h4{margin-bottom:12px}
+    .footer-links{display:grid;gap:8px}
+    .copy{border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:18px;color:#c7d8ef;font-size:14px}
+    @media(max-width:900px){
+      .hero-grid,.split,.footer-grid{grid-template-columns:1fr}
+      .features,.cards,.steps{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .hero-visual{height:450px}
+    }
+    @media(max-width:600px){
+      .features,.cards,.steps{grid-template-columns:1fr}
+      .hero{padding-top:42px}
+      .hero-visual{height:390px}
+      .hero-card{width:260px}
+      .content-panel,.cta{padding:28px}
+      .topbar .container{justify-content:center;text-align:center}
+      h1{font-size:42px}
+      .logo{font-size:24px}
+      .btn-secondary.hide-mobile{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>📍 Sydney, Australia Childcare Staffing Support</span>
+      <span>☎ +61 2 9283 7280 &nbsp; | &nbsp; ✉ admin@ministars.com.au</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home"><span class="logo-mark">★</span><span>Mini<b>Stars</b></span></a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Staffing Support</a>
+          <a href="#why">Why MiniStars</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+        <a class="btn btn-primary" href="#contact">Register Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">⭐ MiniStars Childcare Staffing Agency</div>
+          <h1>Fast, Reliable <strong>Childcare Staffing</strong> Across Sydney</h1>
+          <p>MiniStars connects childcare centres with qualified, screened and reliable educators for casual, emergency, planned and long-term staffing support.</p>
+          <div class="hero-points">
+            <div><span class="tick">✓</span> Qualified educators for childcare centres</div>
+            <div><span class="tick">✓</span> Emergency and last-minute staffing support</div>
+            <div><span class="tick">✓</span> Casual work opportunities for educators</div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Find Staff</a>
+            <a class="btn btn-secondary hide-mobile" href="#educators">Find Childcare Jobs</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Australian childcare staffing visual">
+          <div class="hero-card">
+            <strong>Australian childcare support</strong>
+            <p>Helping centres maintain smooth daily operations with trusted educators.</p>
+          </div>
+          <div class="flag-ribbon">AUSTRALIA • SYDNEY</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="feature-strip">
+      <div class="container features">
+        <div class="feature"><div class="feature-icon">👩‍🏫</div><div><h3>Qualified Staff</h3><p>Certified childcare professionals.</p></div></div>
+        <div class="feature"><div class="feature-icon">⚡</div><div><h3>Quick Support</h3><p>Urgent staffing when available.</p></div></div>
+        <div class="feature"><div class="feature-icon">🧸</div><div><h3>Childcare Focused</h3><p>Built for early learning centres.</p></div></div>
+        <div class="feature"><div class="feature-icon">🤝</div><div><h3>Trusted Partner</h3><p>Reliable recruitment support.</p></div></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Welcome to MiniStars</h2>
+          <p>A childcare recruitment partner helping centres stay fully staffed while giving educators flexible work opportunities across Sydney.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80')"></div>
+            <div class="card-body"><h3>For Childcare Centres</h3><p>Get reliable casual educators for same-day cover, planned absences, staff shortages and long-term requirements.</p><a class="link" href="#contact">Register Centre →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=900&q=80')"></div>
+            <div class="card-body"><h3>For Educators</h3><p>Find flexible childcare shifts and casual work opportunities that match your availability and experience.</p><a class="link" href="#educators">Join MiniStars →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80')"></div>
+            <div class="card-body"><h3>Staffing Support</h3><p>MiniStars provides educators, assistants and support staff for emergency, casual and long-term needs.</p><a class="link" href="#services">View Services →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container split">
+        <div class="image-panel"></div>
+        <div class="content-panel">
+          <h2>Flexible Staffing Solutions</h2>
+          <p>MiniStars supports childcare centres with staffing solutions designed for real centre needs: urgent replacement, casual shifts, planned cover and long-term placements.</p>
+          <ul class="list">
+            <li>Casual educators for last-minute staff shortages</li>
+            <li>Qualified and screened childcare professionals</li>
+            <li>Emergency staffing support when available</li>
+            <li>Long-term placement support for centres</li>
+            <li>Flexible work opportunities for educators</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Contact MiniStars</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="why">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Choose MiniStars?</h2>
+          <p>MiniStars focuses on speed, quality, reliability and ongoing support for both childcare centres and educators.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3>Fast Response</h3><p>Supports urgent centre staffing gaps and planned staffing requirements.</p></div>
+          <div class="step"><div class="num">2</div><h3>Qualified Educators</h3><p>Provides certified childcare professionals who meet industry standards.</p></div>
+          <div class="step"><div class="num">3</div><h3>Simple Process</h3><p>Centres and educators can register, connect and start the matching process quickly.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="educators">
+      <div class="container split">
+        <div class="content-panel">
+          <h2>Casual Childcare Jobs for Educators</h2>
+          <p>MiniStars helps childcare educators find casual and flexible work opportunities across Sydney childcare centres.</p>
+          <ul class="list">
+            <li>Flexible shifts based on availability</li>
+            <li>Opportunities across Sydney centres</li>
+            <li>Supportive registration process</li>
+            <li>Work with trusted childcare providers</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Apply as Educator</a>
+        </div>
+        <div class="image-panel" style="background-image:url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80')"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>Need Childcare Staffing Support in Australia?</h2>
+          <p>Register your childcare centre or apply as an educator with MiniStars. Built for Sydney childcare staffing needs.</p>
+          <a class="btn btn-primary" href="mailto:admin@ministars.com.au">Email MiniStars</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#home" style="color:white"><span class="logo-mark">★</span><span>Mini<b>Stars</b></span></a>
+          <p style="margin-top:14px;max-width:460px">MiniStars childcare staffing and recruitment support across Sydney, Australia.</p>
+        </div>
+        <div><h4>Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="#about">About Us</a><a href="#services">Staffing Support</a><a href="#contact">Contact Us</a></div></div>
+        <div><h4>Services</h4><div class="footer-links"><a href="#services">Casual Staff</a><a href="#educators">Childcare Jobs</a><a href="#why">Long-Term Support</a></div></div>
+        <div><h4>Contact</h4><div class="footer-links"><a href="tel:+61292837280">+61 2 9283 7280</a><a href="mailto:admin@ministars.com.au">admin@ministars.com.au</a><span>Sydney, NSW, Australia</span></div></div>
+      </div>
+      <div class="copy">© 2026 MiniStars. Landing page UI concept created for improved presentation.</div>
+    </div>
+  </footer>
+</body>
+</html>
